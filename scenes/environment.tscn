@@ -9,7 +9,7 @@ size = Vector2(41, 480)
 size = Vector2(724, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx6ck"]
-size = Vector2(725.5, 38)
+size = Vector2(724, 38)
 
 [node name="Environment" type="Node2D"]
 
@@ -32,12 +32,13 @@ shape = SubResource("RectangleShape2D_wn8y3")
 [node name="TopWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2(322, -23.5)
+position = Vector2(321, -22.5)
 shape = SubResource("RectangleShape2D_infxx")
 
 [node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(322.25, 500)
+position = Vector2(320, 500)
 shape = SubResource("RectangleShape2D_sx6ck")
 debug_color = Color(0.951543, 0.190632, 0.292418, 0.42)
