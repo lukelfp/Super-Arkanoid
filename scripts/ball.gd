@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var y_speed = -250
 @export var angle = [-200, -250, 250, 300]
 @export var drop_probability = 0.2
-@export var item_scene = preload("res://item_power_up.tscn")
+@export var item_scene = preload("res://scenes/item_power_up.tscn")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
