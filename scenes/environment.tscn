@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs4wt67bwtysd"]
+[gd_scene load_steps=6 format=3 uid="uid://bs4wt67bwtysd"]
 
+[ext_resource type="Script" path="res://scripts/environment.gd" id="1_ivsg5"]
 [ext_resource type="Texture2D" uid="uid://csta7pkxxlx3w" path="res://sprites/Background.png" id="1_r873k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wn8y3"]
@@ -12,6 +13,7 @@ size = Vector2(724, 45)
 size = Vector2(724, 38)
 
 [node name="Environment" type="Node2D"]
+script = ExtResource("1_ivsg5")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_r873k")
@@ -50,3 +52,10 @@ collision_mask = 10
 position = Vector2(320, 500)
 shape = SubResource("RectangleShape2D_sx6ck")
 debug_color = Color(0.951543, 0.190632, 0.292418, 0.42)
+
+[node name="TimerReset" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+[connection signal="timeout" from="TimerReset" to="." method="_on_timer_reset_timeout"]
