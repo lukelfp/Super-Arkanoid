@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@onready var ball: CharacterBody2D = $"."
+@onready var spawn_shoot: Timer = $SpawnShoot
 
+func _ready():
+	GameManager.on_powerup.connect(spawn_bullet)
 
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
@@ -14,3 +16,9 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_collide(velocity * delta)
 	
+func spawn_bullet():
+	spawn_shoot.start()
+
+
+func _on_spawn_shoot_timeout() -> void:
+	spawn_bullet()
