@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b613gic1causo"]
+[gd_scene load_steps=11 format=3 uid="uid://b613gic1causo"]
 
 [ext_resource type="PackedScene" uid="uid://bs4wt67bwtysd" path="res://scenes/environment.tscn" id="1_nao52"]
 [ext_resource type="PackedScene" uid="uid://35ifpdjc3tf7" path="res://scenes/player.tscn" id="2_xdmib"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dqs4t8t4ebj36" path="res://sprites/GreenBlock.png" id="7_sux35"]
 [ext_resource type="Texture2D" uid="uid://dmraaivdafwbt" path="res://sprites/BlueBlock.png" id="8_31kps"]
 [ext_resource type="Texture2D" uid="uid://byl2kxxr120w5" path="res://sprites/YellowBlock.png" id="9_780ej"]
+[ext_resource type="PackedScene" uid="uid://lt8tfn00pepa" path="res://scenes/item_power_up.tscn" id="10_7hhi8"]
 
 [node name="Level1" type="Node2D"]
 
@@ -310,3 +311,5 @@ position = Vector2(560, 48)
 [node name="Sprite2D" type="Sprite2D" parent="Yellow/Block40"]
 texture = ExtResource("9_780ej")
 centered = false
+
+[node name="Item Power Up" parent="." instance=ExtResource("10_7hhi8")]
